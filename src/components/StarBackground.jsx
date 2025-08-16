@@ -2,9 +2,22 @@ import { useEffect, useState } from "react";
 
 export const StarBackground = () => {
   const [stars, setStars] = useState([]);
+  const [meteors, setMeteors] = useState([]);
 
   useEffect(() => {
     generateStars();
+    generateMeteors();
+
+    const handleResize = () => {
+      generateStars();
+      generateMeteors(4);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const generateStars = () => {
@@ -24,6 +37,19 @@ export const StarBackground = () => {
     setStars(newStars);
   };
 
+  const generateMeteors = (numberOfMeteors = 6) => {
+    const newMeteors = Array.from({ length: numberOfMeteors }, (_, index) => ({
+      id: index,
+      x: Math.random() * 100,
+      y: Math.random() * 20,
+      size: Math.random() * 2 + 1,
+      delay: Math.random() * 15,
+      animationDuration: Math.random() * 3 + 3,
+    }));
+
+    setMeteors(newMeteors);
+  };
+
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {stars.map((star) => (
@@ -37,6 +63,21 @@ export const StarBackground = () => {
             top: `${star.y}%`,
             opacity: star.opacity,
             animationDuration: `${star.animation}s`,
+          }}
+        ></div>
+      ))}
+
+      {meteors.map((meteor) => (
+        <div
+          key={meteor.id}
+          className="meteor animate-meteor"
+          style={{
+            width: `${meteor.size * 50}px`,
+            height: `${meteor.size * 2}px`,
+            left: `${meteor.x}%`,
+            top: `${meteor.y}%`,
+            delay: `${meteor.delay}s`,
+            animationDuration: `${meteor.animationDuration}s`,
           }}
         ></div>
       ))}
