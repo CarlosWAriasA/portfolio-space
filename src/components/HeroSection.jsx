@@ -21,9 +21,9 @@ export const HeroSection = () => {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I create stellar web experiences with modern technologies.
-            Sepecializing in fron-end development, I build interfaces that are
-            not only visually appealing but also performant and accessible.
+            I build modern web applications with React, .NET, and SQL Server. My
+            focus is creating user experiences that are visually engaging,
+            high-performing, and accessible.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">

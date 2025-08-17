@@ -4,30 +4,22 @@ import React from "react";
 const projects = [
   {
     id: 1,
-    title: "Project 1",
-    description: "Project 1 description",
-    image: "projects/project1.png",
-    tags: ["React", "Node.js", "MongoDB"],
-    demoUrl: "#",
-    gitHubUrl: "#",
+    title: "QuizMaster",
+    description:
+      "A full-stack quiz platform that lets users create, share, and complete quizzes. Built with React, ASP.NET Core, and SQL Server, it features authentication with JWT, quiz generation with multiple options, result tracking, email notifications, and even AI-powered quiz generation via DeepSeek.",
+    image: "projects/quizmaster.png",
+    tags: ["React", "TypeScript", "ASP.NET Core", "SQL Server", "Tailwind"],
+    gitHubUrl: "https://github.com/CarlosWAriasA/quizmaster",
   },
   {
     id: 2,
-    title: "Project 1",
-    description: "Project 1 description",
-    image: "projects/project1.png",
-    tags: ["React", "Node.js", "MongoDB"],
-    demoUrl: "#",
-    gitHubUrl: "#",
-  },
-  {
-    id: 3,
-    title: "Project 1",
-    description: "Project 1 description",
-    image: "projects/project1.png",
-    tags: ["React", "Node.js", "MongoDB"],
-    demoUrl: "#",
-    gitHubUrl: "#",
+    title: "YourExercises",
+    description:
+      "A fitness web app designed to help users explore exercises, learn proper form, and create workout plans. Built with React and integrated with exercise APIs, it provides categorized workouts, search functionality, and responsive design for both desktop and mobile.",
+    image: "projects/exercises.png",
+    tags: ["React", "Vite", "Tailwind", "API Integration"],
+    demoUrl: "https://yourexercises.netlify.app/",
+    gitHubUrl: "https://github.com/CarlosWAriasA/fitnessapp",
   },
 ];
 
@@ -76,13 +68,15 @@ export const ProjectsSection = () => {
 
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
                     <a
                       href={project.gitHubUrl}
                       target="_blank"

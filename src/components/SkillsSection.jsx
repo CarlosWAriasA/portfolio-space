@@ -3,18 +3,29 @@ import { cn } from "@/lib/utils";
 
 const skills = [
   { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 85, category: "frontend" },
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "database" },
-  { name: "MySQL", level: 65, category: "database" },
-  { name: "PostgreSQL", level: 60, category: "database" },
-  { name: "Git", level: 95, category: "tools" },
-  { name: "Docker", level: 85, category: "tools" },
-  { name: "CI/CD", level: 80, category: "tools" },
-  { name: "AWS", level: 75, category: "tools" },
-  { name: "Figma", level: 90, category: "tools" },
+  { name: "JavaScript (ES6+)", level: 90, category: "frontend" },
+  { name: "TypeScript", level: 85, category: "frontend" },
+  { name: "React", level: 90, category: "frontend" },
+  { name: "React Native", level: 75, category: "frontend" },
+  { name: "Tailwind CSS", level: 70, category: "frontend" },
+
+  { name: "C#", level: 90, category: "backend" },
+  { name: ".NET Core / ASP.NET", level: 85, category: "backend" },
+  { name: "Java", level: 60, category: "backend" },
+  { name: "Entity Framework Core", level: 80, category: "backend" },
+  { name: "Express.js", level: 80, category: "backend" },
+
+  { name: "SQL Server", level: 80, category: "database" },
+  { name: "MySQL", level: 80, category: "database" },
+  { name: "SQLite", level: 80, category: "database" },
+  { name: "MongoDB", level: 60, category: "database" },
+
+  { name: "Git / GitHub", level: 95, category: "tools" },
+  { name: "Docker", level: 60, category: "tools" },
+  { name: "CI/CD", level: 50, category: "tools" },
+  { name: "Postman", level: 80, category: "tools" },
+  { name: "Crystal Reports", level: 70, category: "tools" },
+  { name: "Figma", level: 50, category: "tools" },
 ];
 
 const categories = [

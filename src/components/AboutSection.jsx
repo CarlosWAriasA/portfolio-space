@@ -12,20 +12,22 @@ export const AboutSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 ">
-            <h3 className="text-2xl font-semibold">
-              Passionate Web Developer{" "}
-            </h3>
+            <h3 className="text-2xl font-semibold">Full-Stack Developer </h3>
             <p className="text-muted-foreground">
-              With a strong foundation in web development, I am dedicated to
-              building responsive and user-friendly websites. I have a passion
-              for learning new technologies and building projects that challenge
-              me.
+              I’m Carlos Arias, a software developer with over 2 years of
+              experience building modern web applications. My core stack is{" "}
+              <span className="text-primary font-medium">
+                React, .NET, and SQL Server
+              </span>
+              , and I enjoy turning ideas into scalable, performant, and
+              user-friendly solutions.
             </p>
 
             <p className="text-muted-foreground">
-              I am a passionate web developer with a strong focus on creating
-              responsive and user-friendly websites. I have a passion for
-              learning new technologies and building projects that challenge me.
+              I focus on crafting interfaces that balance clean design with
+              functionality, while also developing robust back-end systems. I’m
+              passionate about continuous learning and using technology to
+              create meaningful digital products.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -34,7 +36,8 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href="cv link"
+                href="/CarlosArias-SoftwareDeveloper.pdf"
+                target="_blank"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/1- transition-colors duration-300"
               >
                 Download CV
@@ -49,9 +52,12 @@ export const AboutSection = () => {
                   <Code className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-lg font-semibold">Web Development</h4>
+                  <h4 className="text-lg font-semibold">
+                    Frontend Development
+                  </h4>
                   <p className="text-muted-foreground">
-                    Creating responsive and user-friendly websites.
+                    Building responsive and interactive UIs with React,
+                    TypeScript, and modern styling frameworks.
                   </p>
                 </div>
               </div>
@@ -63,9 +69,10 @@ export const AboutSection = () => {
                   <User className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-lg font-semibold">UI/UX Design</h4>
+                  <h4 className="text-lg font-semibold">Backend & Databases</h4>
                   <p className="text-muted-foreground">
-                    Designing intuitive and visually pleasing interfaces.
+                    Developing APIs with .NET Core and managing data with SQL
+                    Server for reliability and scalability.
                   </p>
                 </div>
               </div>
@@ -77,9 +84,10 @@ export const AboutSection = () => {
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-lg font-semibold">Responsive Design</h4>
+                  <h4 className="text-lg font-semibold">Problem-Solving</h4>
                   <p className="text-muted-foreground">
-                    Ensuring websites are optimized for all devices.
+                    Creating efficient solutions by combining technical skills
+                    with a strong focus on user needs.
                   </p>
                 </div>
               </div>

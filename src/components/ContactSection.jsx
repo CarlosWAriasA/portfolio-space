@@ -2,21 +2,52 @@ import { Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/useToast";
+import emailjs from "emailjs-com";
 
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    to_name: "Carlos",
+    from_name: "",
+    reply_to: "",
+    message: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleChange = async (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          to_name: formData.to_name,
+          from_name: formData.from_name,
+          reply_to: formData.reply_to,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
       toast({
         title: "Message sent successfully",
         description: "I'll get back to you as soon as possible",
       });
       setIsSubmitting(false);
-    }, 1000);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an issue sending your message.",
+      });
+      setIsSubmitting(false);
+      console.error(error);
+    }
   };
 
   return (
@@ -111,6 +142,9 @@ export const ContactSection = () => {
                   id="name"
                   placeholder="Carlos Arias..."
                   required
+                  value={formData.from_name}
+                  name="from_name"
+                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -125,8 +159,11 @@ export const ContactSection = () => {
                 <input
                   type="email"
                   id="email"
+                  name="reply_to"
                   placeholder="example123@gmail.com"
                   required
+                  value={formData.reply_to}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -139,10 +176,12 @@ export const ContactSection = () => {
                   Your Message
                 </label>
                 <textarea
-                  name="message"
                   id="message"
+                  name="message"
                   placeholder="Write your message here..."
                   required
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
                 ></textarea>
               </div>
